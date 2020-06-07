@@ -9,11 +9,13 @@
 }
 
 body{
+    background-color: black;
     background-image: url("../res/bg-min.JPG");
+    min-height: 100%;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
-    min-height: 100vh;
     
 }
 .mainMenuWrapper ul{
@@ -159,7 +161,24 @@ body{
       }
       .menu ul li a {
         cursor: pointer;
+        --fill-color: #6fe515;
+        position: relative;
+        display: block;
+        padding: 0.1px 0;
+        font: 700 2.2rem Raleway, sans-serif;
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-text-stroke: 1.5px var(--fill-color);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, var(--fill-color))) left/0 no-repeat;
+        background: linear-gradient(var(--fill-color) 0 100%) left/0 no-repeat;
+        color: transparent;
+     
       }
+
+      .menu ul li a:hover {
+        background-size: 100%;
+      }
+      
       
       .menu-sliders {
         -webkit-box-flex: 1;
@@ -219,7 +238,12 @@ body{
       body.menu-open #quote-wrapper {
         visibility: hidden;
       }
-
+      body.menu-open .menu ul li a {
+        -webkit-background-clip: text;
+        background-clip: text;
+    -webkit-transition: 0.5s linear;
+    transition: 0.5s linear;
+      }
 
 #body-wrapper{
     background: rgba(0, 0, 0, 0.65);
